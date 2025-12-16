@@ -100,6 +100,9 @@ index d8cbe9d5..827a2061 100644
 +                if (sig != null &&
 +                        permissions.contains("android.permission.FAKE_PACKAGE_SIGNATURE")) {
 +                    pi.signatures = new Signature[] {new Signature(sig)};
++                    pi.signingInfo = new SigningInfo((new SigningDetails.Builder())
++                            .setSignatures(new Signature[] {new Signature(sig)})
++                            .build());
 +                }
 +            }
 +        } catch (Throwable t) {
